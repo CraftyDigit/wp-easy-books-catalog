@@ -1,0 +1,44 @@
+{
+  "name": "easy-books-catalog",
+  "version": "1.0.0",
+  "description": "Small WP plugin for cataloguing books",
+  "main": "index.js",
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  },
+  "scripts": {
+    "dev": "webpack --mode=development --watch --config webpack.config.js",
+    "prod": "webpack --mode=production --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oleinik-v89/easy-books-catalog.git"
+  },
+  "keywords": [
+    "wordpress",
+    "books",
+    "catalog"
+  ],
+  "author": "Vyacheslav Oleinik",
+  "private": true,
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/oleinik-v89/easy-books-catalog/issues"
+  },
+  "homepage": "https://github.com/oleinik-v89/easy-books-catalog#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.14.8",
+    "@babel/preset-env": "^7.14.8",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^6.2.0",
+    "mini-css-extract-plugin": "^2.1.0",
+    "sass": "^1.37.0",
+    "sass-loader": "^12.1.0",
+    "webpack": "^5.47.1",
+    "webpack-cli": "^4.7.2"
+  },
+  "dependencies": {}
+}
