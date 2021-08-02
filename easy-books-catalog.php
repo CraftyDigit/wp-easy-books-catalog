@@ -14,35 +14,19 @@ if ( ! defined( 'WPINC' ) ) {
     die;
 }
 
-/**
- * Enqueue frontend scripts and styles.
- */
-function frontend_scripts() {
-    wp_enqueue_script(
-        'ebc-frontend-js',
-        plugins_url( 'assets/js/frontend.js', __FILE__ ),
-        [ 'jquery' ]
-    );
-    wp_enqueue_style(
-        'ebc-frontend-css',
-        plugins_url( 'assets/css/frontend.css', __FILE__ )
-    );
+spl_autoload_register(function ($class_name) {
+    $class_file_path = dirname( __FILE__ ). '/' . $class_name . '.php';
+
+    if (file_exists($class_file_path)){
+        include $class_file_path;
+    }
+}, false);
+
+$ebc = new ebc();
+
+class ebc {
+    public function __construct() {
+    }
 }
-add_action( 'wp_enqueue_scripts', 'frontend_scripts' );
 
 
-/**
- * Enqueue admin scripts and styles.
- */
-function admin_assets() {
-    wp_enqueue_script(
-        'ebc-admin-js',
-        plugins_url( 'assets/js/admin.js', __FILE__ ),
-        [ 'jquery' ]
-    );
-    wp_enqueue_style(
-        'ebc-admin-css',
-        plugins_url( 'assets/css/admin.css', __FILE__ )
-    );
-}
-add_action( 'admin_enqueue_scripts', 'admin_assets' );
