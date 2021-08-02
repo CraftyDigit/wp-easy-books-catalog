@@ -35,10 +35,19 @@
     "babel-loader": "^8.2.2",
     "css-loader": "^6.2.0",
     "mini-css-extract-plugin": "^2.1.0",
+    "postcss": "^8.3.6",
+    "postcss-loader": "^6.1.1",
     "sass": "^1.37.0",
     "sass-loader": "^12.1.0",
     "webpack": "^5.47.1",
     "webpack-cli": "^4.7.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@popperjs/core": "^2.9.2",
+    "autoprefixer": "^10.3.1",
+    "bootstrap": "^5.0.2",
+    "jquery": "^3.6.0",
+    "popper.js": "^1.16.1",
+    "precss": "^4.0.0"
+  }
 }
