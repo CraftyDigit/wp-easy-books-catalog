@@ -27,6 +27,7 @@ $ebc = new ebc();
 class ebc {
     public function __construct() {
         new ebcPostType();
+        new ebcAssets();
     }
 }
 
