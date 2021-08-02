@@ -17,4 +17,11 @@ class ebcUtils {
 
         return $book_data;
     }
+
+    /**
+     * Get size class for list item
+     */
+    static public function get_list_item_size_class($items_per_line = null) {
+        return $items_per_line ? "col-md-".( round(12/$items_per_line)) : "col-md-6";
+    }
 }
