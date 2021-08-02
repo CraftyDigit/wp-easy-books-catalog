@@ -29,6 +29,7 @@ class ebc {
         new ebcTemplates();
         new ebcPostType();
         new ebcAssets();
+        new ebcShortcodes();
     }
 }
 
