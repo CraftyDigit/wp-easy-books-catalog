@@ -2,14 +2,13 @@
 /**
  * The template part for displaying list of books
  */
+
+use Core\EBCTemplates;
+
 ?>
 <div class="row mb-2">
-
-    <?php
-
-    foreach ($args['books']  as $book){
-            load_template(ebcTemplates::$list_item, false, [ 'book' => $book, 'items_per_line' => $args['items_per_line']] );
-        }
-    ?>
-
+<h1>tst</h1>
+    <?php foreach ($args['books']  as $book){
+        load_template(EBCTemplates::getTemplatePath('list_item'), false, [ 'book' => $book, 'row_item_class' =>  $args['row_item_class']] );
+    } ?>
 </div>

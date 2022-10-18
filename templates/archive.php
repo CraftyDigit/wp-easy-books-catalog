@@ -3,6 +3,10 @@
  * The template for displaying archive pages
  */
 
+use Core\EBCTemplates;
+use Core\EBCCommonData;
+use Model\EBCBook;
+
 get_header();
 
 $description = get_the_archive_description();
@@ -14,7 +18,7 @@ $description = get_the_archive_description();
         <section class="py-0 text-center container">
             <div class="row py-lg-0">
                 <div class="col-lg-6 col-md-8 mx-auto">
-                    <h1 class="fw-light mt-0" >Книги</h1>
+                    <h1 class="fw-light mt-0" ><?php echo EBCCommonData::PLUGIN_NAME; ?></h1>
 
                     <?php if ( $description ) : ?>
                         <p class="lead text-muted"><?php echo wp_kses_post( wpautop( $description ) ); ?></p>
@@ -32,10 +36,11 @@ $description = get_the_archive_description();
 
             <?php
                 $post = get_post();
-                $book = ebcUtils::get_book($post->ID);
-                $template_path = ebcTemplates::$list_item;
+                $book = new EBCBook($post->ID);
+                $template_path = EBCTemplates::getTemplatePath('list_item');
+                $row_item_class = EBCTemplates::getListItemSizeClass();
 
-                load_template( $template_path, false, [ 'book' => $book] );
+                load_template( $template_path, false, [ 'book' => $book, 'row_item_class' => $row_item_class] );
             ?>
 
         <?php endwhile; ?>
