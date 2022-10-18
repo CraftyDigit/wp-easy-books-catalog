@@ -1,12 +1,14 @@
-# easy-books-catalog
+# wp-easy-books-catalog
 Small WP plugin for cataloguing books
 
-Справка по использованию:
-- После установки плагина в меню появится пункт "Книги", где можно будет добавлять/удалять/редактировать книги. 
-- Страница архива книг автоматически заменяется на кастомную. 
-- Шорткод для вывода списка книг [ebc_list ids="1,2,3"], где "1,2,3" - ID книг через запятую.
+## FAQ:
+- The "EBC" menu item will appear after plugin activation. All catalogue management is available there. 
+- Custom archive page. 
+- The "ebc_list" shortcode is avalaible. It can be used to show the list of books. 
+> [ebc_list ids="1,2,3"], where "1,2,3" - book post IDs.
 
-Справка по разработке:
-- Использовал webpack. 
-- Есть 2 арианта сборки - "dev" и "prod" (npm run dev / npm run prod). В "dev" подключаются "source maps" для "js" и "scss/css" файлов. В "prod" стили и скрипты минифицируются.  
-- В проекте включена поддержка bootstrap, sass, jquery, babel. 
+
+## Development notes:
+- Webpack. 
+- dev/prod modes (npm run dev / npm run prod). In "dev" mode source maps for js/scss/css files are available. In "prod" mode js/scss/css files are minified.
+- Bootstrap, sass, jquery, babel support enabled. 
